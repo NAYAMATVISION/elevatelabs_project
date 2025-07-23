@@ -9,7 +9,7 @@ import yfinance as yf
 
 # Page configuration (should be first Streamlit command)
 st.set_page_config(
-    page_title="Stock Prediction App",
+    page_title="TrendLoom",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -18,28 +18,47 @@ st.set_page_config(
 # Custom CSS for better styling
 st.markdown("""
     <style>
-        .main {
-            padding: 2rem;
+        .stApp {
+            background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            background-color: rgba(255, 255, 255, 0.9);
         }
+        
+        .main .block-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Rest of your existing styles */
         .stTextInput>div>div>input {
             background-color: #f0f2f6;
         }
+        
         .stButton>button {
             background-color: #4CAF50;
             color: white;
             border-radius: 5px;
             padding: 0.5rem 1rem;
         }
+        
         .stButton>button:hover {
             background-color: #45a049;
         }
+        
         .stAlert {
             border-radius: 10px;
         }
+        
         .css-1aumxhk {
             background-color: #f0f2f6;
             background-image: none;
         }
+        
         .plot-container {
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -47,6 +66,7 @@ st.markdown("""
             margin-bottom: 2rem;
             background-color: white;
         }
+        
         .header {
             color: #2c3e50;
             border-bottom: 2px solid #2c3e50;
@@ -60,7 +80,7 @@ start = '2010-01-01'
 end = '2020-01-01'
 
 # Main title with better styling
-st.markdown("<h1 style='text-align: center; color: #2c3e50;'>📈 Stock Trend Prediction</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #2c3e50;'>📈 TrendLoom</h1>", unsafe_allow_html=True)
 st.markdown("<div style='text-align: center; margin-bottom: 2rem;'>Predict stock prices using LSTM deep learning model</div>", unsafe_allow_html=True)
 
 # Sidebar for user inputs
@@ -200,6 +220,26 @@ with tab3:
     with col2:
         st.metric("Root Mean Squared Error", f"${rmse:.2f}")
 
-# Footer
 st.markdown("---")
-st.markdown("<div style='text-align: center; color: #7f8c8d;'>Stock Prediction App © 2023 | Powered by Streamlit, Keras, and Yahoo Finance</div>", unsafe_allow_html=True)
+st.markdown("""
+<div style='text-align: center; color: #7f8c8d; padding: 1rem;'>
+    <div style='max-width: 800px; margin: 0 auto; text-align: left;'>
+        <p style='font-size: 15px; margin-bottom: 0.5rem;'>
+            <strong>Model Details:</strong> This app uses a <strong>Long Short-Term Memory (LSTM)</strong> neural network, 
+            a type of deep learning model designed to analyze time-series data like stock prices.
+        </p>
+        <ul style='font-size: 14px; margin-top: 0.5rem; margin-bottom: 0.5rem; padding-left: 1.5rem;'>
+            <li>The model is trained on past closing prices</li>
+            <li>It tries to <strong>predict future stock prices</strong> based on learned patterns</li>
+            <li>The chart shows the <strong>predicted trend</strong> vs actual historical data</li>
+        </ul>
+        <p style='font-size: 14px; color: #e74c3c; margin-top: 0.5rem; margin-bottom: 0.5rem;'>
+            ⚠️ <strong>Disclaimer:</strong> This tool is for educational purposes only. The predictions are not guaranteed 
+            and should not be used for real financial decisions.
+        </p>
+    </div>
+    <div style='margin-top: 1rem; font-size: 14px;'>
+        Stock Prediction App © 2025 | Powered by Streamlit, Keras, and Yahoo Finance
+    </div>
+</div>
+""", unsafe_allow_html=True)
