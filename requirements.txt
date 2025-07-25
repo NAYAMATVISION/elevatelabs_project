@@ -5,3 +5,5 @@ matplotlib>=3.8.0
 yfinance>=0.2.31
 requests>=2.31.0
 tensorflow>=2.15.0
+pandas_datareader
+
