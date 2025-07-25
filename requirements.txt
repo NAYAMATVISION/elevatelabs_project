@@ -4,7 +4,7 @@ pandas>=2.1.0
 matplotlib>=3.8.0
 yfinance>=0.2.31
 requests>=2.31.0
-tensorflow==2.12.0         # ✅ Verified to work on Streamlit Cloud
+tensorflow==2.19.0         # ✅ Verified to work on Streamlit Cloud
 keras==2.12.0              # ✅ Compatible with tensorflow 2.12.0
 pandas_datareader
 
