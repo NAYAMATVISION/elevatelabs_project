@@ -1,9 +1,10 @@
 streamlit>=1.32.0
-numpy>=1.24.0
+numpy>=1.23.0,<2.0.0       # Avoid numpy 2.x — TensorFlow doesn't support it well
 pandas>=2.1.0
 matplotlib>=3.8.0
 yfinance>=0.2.31
 requests>=2.31.0
-tensorflow>=2.15.0
+tensorflow==2.12.0         # ✅ Verified to work on Streamlit Cloud
+keras==2.12.0              # ✅ Compatible with tensorflow 2.12.0
 pandas_datareader
 
